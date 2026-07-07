@@ -1,0 +1,17 @@
+replicaCount: 2
+
+image:
+   repository: public.ecr.aws/l6m2t8p7/docker-2048
+   tag: latest
+   pullPolicy: IfNotPresent
+
+namespace:
+  name: game-2048
+
+service:
+  port: 80
+  targetPort: 80
+  type: NodePort
+
+ingress:
+  className: nginx
