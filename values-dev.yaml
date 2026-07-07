@@ -14,4 +14,4 @@ service:
   type: NodePort
 
 ingress:
-  className: nginx
+  className: traefik
