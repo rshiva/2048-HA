@@ -6,17 +6,16 @@ metadata:
 spec:
   project: default
   source:
-    repoURL:
-    targetRevision:
-    path:
-        helm:
-          valueFiles:
-              -
+    repoURL: https://github.com/rshiva/2048-HA.git
+    targetRevision: HEAD
+    path: /charts/game-2048
+    helm:
+      valueFiles:
+        - values-dev.yaml
   destination:
      server: https://kubernetes.default.svc
      namespace: game-2048
-  syncpolicy:
+  syncPolicy:
     automated:
       prune: true
       selfHeal: true
-      verify: true
