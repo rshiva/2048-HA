@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+   name: game-2048
+   namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rshiva/2048-HA.git
+    targetRevision: HEAD
+    path: charts/httpbin
+    helm:
+      valueFiles:
+        - values-dev.yaml
+  destination:
+     server: https://kubernetes.default.svc
+     namespace: game-2048
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      enabled: true

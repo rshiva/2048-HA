@@ -1,0 +1,14 @@
+namespace:
+  name: game-2048
+
+replicaCount: 3
+
+image:
+  repository: kennethreitz/httpbin
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  port: 80
+  targetPort: 80
+  type: ClusterIP
