@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/rshiva/2048-HA.git
     targetRevision: HEAD
-    path: /charts/game-2048
+    path: charts/game-2048
     helm:
       valueFiles:
         - values-dev.yaml
