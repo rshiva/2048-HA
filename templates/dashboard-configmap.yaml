@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: red-dashboard-2048
+  namespace: monitoring
+  labels:
+    grafana_dashboard: "1"
+data:
+  red-2048.json: |
+    {{ .Files.Get "dashboards/red-2048.json" | nindent 4 }}

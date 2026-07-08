@@ -11,4 +11,8 @@ namespace:
 service:
   port: 80
   targetPort: 80
-  type: NodePort
+  type: ClusterIP
+
+sidecar:
+   dashboards:
+      enabled: true
