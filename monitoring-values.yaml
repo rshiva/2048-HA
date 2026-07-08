@@ -1,0 +1,4 @@
+grafana:
+  sidecar:
+    dashboards:
+        searchNamespace: "game-2048,monitoring"

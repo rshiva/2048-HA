@@ -5,3 +5,13 @@ ports:
     nodePort: 30080
   websecure:
     nodePort: 30443
+
+metrics:
+  prometheus:
+    entryPoint: metrics
+
+    serviceMonitor:
+      enabled: true
+      namespace: monitoring
+      additionalLabels:
+        release: kube-prometheus-stack
